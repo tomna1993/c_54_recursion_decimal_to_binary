@@ -3,5 +3,5 @@
 
 int main(void)
 {
-    
+    int decimal = get_int("Number: ");
 }
