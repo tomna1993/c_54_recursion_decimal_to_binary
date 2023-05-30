@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 #define ARRAY_LENGTH 32
-#define BITS 8
 
 void print_binary(int binary_array[], int array_length);
 void dec_to_binary(int input_decimal, int output_binary[], int array_length);
