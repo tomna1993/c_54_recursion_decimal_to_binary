@@ -4,7 +4,7 @@
 #define ARRAY_LENGTH 32
 #define BITS 8
 
-void print_binary(int binary_array[]);
+void print_binary(int binary_array[], int array_length);
 void dec_to_binary(int input_decimal, int output_binary[], int array_length);
 
 int main(void)
@@ -24,22 +24,26 @@ int main(void)
     // Convert decimal number to binary and save it into "binary" array
     dec_to_binary(decimal, binary, ARRAY_LENGTH);
 
-    print_binary(binary);
+    print_binary(binary, ARRAY_LENGTH);
 
     return 0;
 }
 
-// Print binary number separeted to 8-bits in a row 
-void print_binary(int binary_array[])
+// Print binary number
+void print_binary(int binary_array[], int array_length)
 {
-    for (int LastByte = ARRAY_LENGTH / 8, byteCount = 1; LastByte >= byteCount; byteCount++)
+    for (int i = 0; i < array_length; i++)
     {
-        for (int MSB = (byteCount * BITS)-8, LSB = (byteCount * BITS)-1; MSB <= LSB; MSB++) 
+        printf ("%i", binary_array[i]);   
+
+        // Separate each 4 bits with space
+        if ((i+1) % 4 == 0)
         {
-            printf ("%i", binary_array[MSB]);     
-        }
-        printf ("\n");
+            printf (" ");
+        }  
     }
+
+    printf ("\n");
 }
 
 // Convert decimal number to binary
